@@ -3,32 +3,14 @@ import styled from 'styled-components';
 import PhotoList from "../../components/PhotoList/PhotoList";
 import {photoActions} from "../../../redux/ActionCreators";
 import {useSelector} from "react-redux";
+import SearchContainer from "../../containers/SearchContainer";
 
-const Search = (props) => {
-
-    const {
-        match
-    } = props;
-
-    const query = match.params.query;
-
-    const {searchResult} = useSelector(state => state.photo);
-
-    useEffect(() => {
-        searchPhoto();
-    }, [query])
-
-    const searchPhoto = () => {
-        photoActions.searchPhoto({
-            per_page: 20,
-            query
-        })
-    }
+const Search = ({match}) => {
 
     return (
         <Container>
-            <SearchName>{query}</SearchName>
-            <PhotoList photos={searchResult?.results}/>
+            <SearchName>{match.params.query}</SearchName>
+            <SearchContainer/>
         </Container>
     )
 }

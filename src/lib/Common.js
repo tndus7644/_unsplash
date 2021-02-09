@@ -71,3 +71,4 @@ export const scrollToContent = (el) => {
     const oft = el.offsetTop - 200;
     window.scrollTo(0, oft);
 };
+

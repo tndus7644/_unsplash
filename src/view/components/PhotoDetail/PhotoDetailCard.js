@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import {AddSvg, ChooseSvg, CloseSvg, InfoSvg, LikeSvg, ShareSvg} from "../Svg";
 import {UnsplashButton} from "../Button/Button.Styled";
@@ -6,98 +6,67 @@ import {Overlay} from "../Layout/Layout.Styled";
 import cn from 'classnames';
 import {navigate} from "../../../lib/History";
 
-const PhotoDetailCard = ({singlePhoto = {}}) => {
+const PhotoDetailCard = ({singlePhoto = {}, closePopup, children}) => {
 
     const {
         urls,
         user
     } = singlePhoto
 
-    const [popup, setPopup] = useState(false);
-
-    const closePopup = () => {
-        setPopup(true)
-        navigate('/');
-    }
-
-    console.log("popup", popup)
 
     return (
-        <>
-            <Container className={(cn({close:popup}))}>
-                <GalleryPopup>
-                    <Overlay className={"overlay"}/>
-                    <Content>
-                        <Button onClick={closePopup}>
-                            <CloseSvg/>
-                        </Button>
-                        <TopInfo>
-                            <User>
-                                <img src={user?.profile_image?.small} alt=""/>
-                                <Username>
-                                    <h1>{user?.name}</h1>
-                                    <h3>{user?.instagram_username}</h3>
-                                </Username>
-                            </User>
-                            <ButtonGroup>
-                                <Like>
-                                    <LikeSvg/>
-                                </Like>
-                                <Add>
-                                    <AddSvg/>
-                                </Add>
-                                <Download>
-                                    Download free
-                                    <ChooseSvg/>
-                                </Download>
-                            </ButtonGroup>
-                        </TopInfo>
-                        <Img>
-                            <img src={urls?.regular} alt=""/>
-                        </Img>
-                        <BottomInfo>
-                            <Share>
-                                <ShareSvg/>
-                                Share
-                            </Share>
-                            <Info>
-                                <InfoSvg/>
-                                Info
-                            </Info>
-                        </BottomInfo>
-                    </Content>
-                </GalleryPopup>
-            </Container>
-        </>
+
+        <Container className={"PhotoDetailCard"}>
+            <GalleryPopup>
+                <Overlay className={"overlay"} fixed/>
+                <Content>
+                    <Button onClick={closePopup}>
+                        <CloseSvg/>
+                    </Button>
+                    <TopInfo>
+                        <User>
+                            <img src={user?.profile_image?.small} alt=""/>
+                            <Username>
+                                <h1>{user?.name}</h1>
+                                <h3>{user?.instagram_username}</h3>
+                            </Username>
+                        </User>
+                        <ButtonGroup>
+                            <Like>
+                                <LikeSvg/>
+                            </Like>
+                            <Add>
+                                <AddSvg/>
+                            </Add>
+                            <Download>
+                                Download free
+                                <ChooseSvg/>
+                            </Download>
+                        </ButtonGroup>
+                    </TopInfo>
+                    <Img>
+                        <img src={urls?.regular} alt=""/>
+                    </Img>
+                    <BottomInfo>
+                        <Share>
+                            <ShareSvg/>
+                            Share
+                        </Share>
+                        <Info>
+                            <InfoSvg/>
+                            Info
+                        </Info>
+                    </BottomInfo>
+                    {children}
+                </Content>
+            </GalleryPopup>
+        </Container>
+
     )
 }
 
 const Container = styled.div`
-    
-    &.close{
-      display: none;
-    }
-`;
-
-const Button = styled.button`
-  position: fixed;
-  top: 0;
-  left: 0;
-  border: 0;
-  background: none;
-  cursor: pointer;
-  user-select: none;
-  &:focus{
-    outline: 0;
-  }
-  svg{
-    fill:#fff;
-  }
-`;
-
-
-const GalleryPopup = styled.div`
-  z-index: 1;
+  z-index: 1000;
   position: fixed;
   top: 0;
   left: 0;
@@ -112,15 +81,44 @@ const GalleryPopup = styled.div`
   }
 `;
 
+const Button = styled.button`
+  position: fixed;
+  top: 0;
+  left: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  user-select: none;
+
+  &:focus {
+    outline: 0;
+  }
+
+  svg {
+    fill: #fff;
+  }
+`;
+
+
+const GalleryPopup = styled.div`
+  position: absolute;
+  top: 50px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow-y: auto;
+`;
+
 const Content = styled.div`
-  width: 1200px;
-  height: 850px;
+  width: 90vw;
+  margin: 0 auto;
   background: #fff;
   border-radius: 4px;
   padding: 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow-y: scroll;
 `;
 
 const TopInfo = styled.div`
@@ -214,6 +212,7 @@ const Img = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 80vh;
 
   img {
     max-width: 400px;

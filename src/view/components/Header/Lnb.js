@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import TopicsContainer from "../../containers/TopicsContainer";
+import TopicsContainer from "../../containers/TopicContainer";
 import TopicList from "./TopicList";
 import {useSelector} from "react-redux";
 

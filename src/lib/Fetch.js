@@ -30,7 +30,7 @@ const request = async (contentType, method, url, data) => {
         if (method === FetchConsts.GET) {
             config.params = {
                 ...data,
-                client_id:UNSPLASH_API_KEY
+                client_id: UNSPLASH_API_KEY
             }
 
         } else {

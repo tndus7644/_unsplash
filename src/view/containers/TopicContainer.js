@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import styled from 'styled-components';
-import {topicActions} from "../../../redux/ActionCreators";
+import {topicActions} from "../../redux/ActionCreators";
 
 const TopicsContainer = () => {
 

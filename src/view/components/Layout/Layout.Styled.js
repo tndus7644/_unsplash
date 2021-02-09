@@ -42,7 +42,7 @@ export const Full = styled.div`
 
 
 export const Overlay = styled.div`
-    position:absolute;
+    position:${props => props.fixed ? 'fixed' :'absolute'};
     top: 0;
     bottom: 0;
     left: 0;

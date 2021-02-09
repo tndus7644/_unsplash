@@ -3,8 +3,11 @@ import styled from 'styled-components';
 import {UnsplashButton} from "../Button/Button.Styled";
 import {AddSvg, DownloadSvg, LikeSvg} from "../Svg";
 import {navigate} from "../../../lib/History";
+import {useLocation} from "react-router-dom";
 
 const PhotoCard = (props) => {
+
+    const location = useLocation();
 
     const {
         alt_description,
@@ -13,10 +16,14 @@ const PhotoCard = (props) => {
         id
     } = props
 
+
     return (
         <Container>
             <Thumb>
-                <img className={"ListPhoto"} src={urls.regular} alt={alt_description} onClick={() => navigate(`photos/${id}`)}/>
+                <img className={"ListPhoto"} src={urls.regular} alt={alt_description} onClick={() => navigate({
+                    pathname: `/photos/${id}`,
+                    state:{from: location.pathname}
+                })}/>
                 <Info className={"Photo-info"}>
                     <User>
                         <img src={user.profile_image.small} alt=""/>

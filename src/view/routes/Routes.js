@@ -4,7 +4,7 @@ import NotFound from "../pages/Results/NotFound";
 import Home from "../pages/Home";
 import SignIn from "../pages/Sign/SignIn";
 import Search from "../pages/Search";
-import PhotoDetail from "../components/PhotoDetail/PhotoDetail";
+import PhotoDetail from "../pages/Detail/Detail";
 
 const Routes = () => {
 
@@ -12,8 +12,8 @@ const Routes = () => {
         <Switch>
             <Route path="/signin" component={SignIn}/>
             <Route exact path="/" component={Home}/>
-            <Route exact path="/search/photos/:query" component={Search}/>
-            <Route exact path="/photos/:id" component={PhotoDetail}/>
+            <Route path="/search/photos/:query" component={Search}/>
+            <Route path="/photos/:id" component={PhotoDetail}/>
             <Route component={NotFound}/>
         </Switch>
     )

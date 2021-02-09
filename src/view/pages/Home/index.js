@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import HomeContainer from "../../containers/HomeContainer";
-import List from "../../components/Home/List";
+import List from "../../containers/PhotoListContainer";
 
 const Home = () => {
     
