@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import PhotoDetailContainer from "../../containers/PhotoDetailContainer";
+import PhotoDetailContainer from "../containers/PhotoDetailContainer";
 
 
 const PhotoDetail = () => {

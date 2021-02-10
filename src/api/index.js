@@ -6,7 +6,7 @@ const API = {
     searchPhoto:(data) => FetchJson.get('/search/photos', data),
     getPhoto:(id, data) => FetchJson.get(`/photos/${id}`, data),
     getPhotoRelated:(id, data) => FetchJson.get(`/photos/${id}/related`, data),
-    randomPhoto:(data) => FetchJson.get(`/photos/random`, data),
+    collectionPhoto:(data) => FetchJson.get(`/search/collections`, data)
 }
 
 export default API;

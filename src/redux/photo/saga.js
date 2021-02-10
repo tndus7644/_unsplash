@@ -13,15 +13,6 @@ const saga = function* () {
                 }))
             }
         }),
-        takeLatest(Action.Types.SEARCH_PHOTO, function* ({data}) {
-            const result = yield call(API.searchPhoto, data)
-            console.log("[saga searchphoto] ", result)
-            if (result) {
-                yield put(Action.Creators.updateState({
-                    searchResult: result
-                }))
-            }
-        }),
         takeLatest(Action.Types.GET_PHOTO, function* ({id, data}) {
             const result = yield call(API.getPhoto, id, data)
             console.log("[saga getPhoto]", result)
@@ -38,16 +29,6 @@ const saga = function* () {
             if (result) {
                 yield put(Action.Creators.updateState({
                     photoRelated: result
-                }))
-            }
-        }),
-
-        takeLatest(Action.Types.RANDOM_PHOTO, function* ({data}) {
-            const result = yield call(API.randomPhoto, data)
-            console.log("[saga randomPhoto]", result)
-            if (result) {
-                yield put(Action.Creators.updateState({
-                    random: result
                 }))
             }
         })

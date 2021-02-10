@@ -113,12 +113,13 @@ const Content = styled.div`
   width: 90vw;
   margin: 0 auto;
   background: #fff;
-  border-radius: 4px;
   padding: 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow-y: scroll;
+  overflow-y: scroll;  
+  border-radius: 4px;
+
 `;
 
 const TopInfo = styled.div`

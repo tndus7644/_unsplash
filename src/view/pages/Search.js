@@ -1,16 +1,14 @@
 import React, {useEffect} from 'react';
 import styled from 'styled-components';
-import PhotoList from "../../components/PhotoList/PhotoList";
-import {photoActions} from "../../../redux/ActionCreators";
-import {useSelector} from "react-redux";
-import SearchContainer from "../../containers/SearchContainer";
+import SearchPhotoContainer from "../containers/SearchPhotoContainer";
+import {SearchName} from "../../SearchName/SearchName";
 
 const Search = ({match}) => {
 
     return (
         <Container>
-            <SearchName>{match.params.query}</SearchName>
-            <SearchContainer/>
+            <Title>{match.params.query}</Title>
+            <SearchPhotoContainer match={match}/>
         </Container>
     )
 }
@@ -20,7 +18,7 @@ const Container = styled.div`
   margin: 50px auto;
 `;
 
-const SearchName = styled.div`
+const Title = styled(SearchName)`
   margin-bottom: 50px;
   font-size: 46px;
   font-weight: bold;

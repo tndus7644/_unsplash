@@ -1,26 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import PhotoCard from "./PhotoCard";
+import {setGroups} from "../../../lib/Common";
 
-const PhotoList = ({photos = []}) => {
+const PhotoList = ({photos}) => {
 
     if (photos.length === 0) return null;
-
-    const setGroups = (data) => {
-        let groups = [[], [], []];
-        let groupsRatio = [0, 0, 0];
-        for (let i = 0; i < data.length; i++) {
-            const ratio = data[i].height / data[i].width;
-
-            const minValue = Math.min(...groupsRatio);
-            const minIndex = groupsRatio.indexOf(minValue);
-            groups[minIndex].push(data[i]);
-            groupsRatio[minIndex] = groupsRatio[minIndex] + ratio;
-        }
-
-        return groups;
-
-    };
 
     const groups = setGroups(photos);
 

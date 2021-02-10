@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import styled from 'styled-components';
 import {useSelector} from "react-redux";
 import {useLocation, useRouteMatch} from 'react-router-dom'
+
 import PhotoListContainer from "./PhotoListContainer";
 import PhotoDetailCard from "../components/PhotoDetail/PhotoDetailCard";
 import {photoActions} from "../../redux/ActionCreators";
@@ -19,10 +20,10 @@ const PhotoDetailContainer = () => {
     const {singlePhoto} = useSelector(state => state.photo);
 
     useEffect(() => {
-        getphotos();
+        getphoto();
     }, [id])
 
-    const getphotos = () => {
+    const getphoto = () => {
         photoActions.getPhoto(id)
     }
 

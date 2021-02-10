@@ -1,25 +1,25 @@
 import React, {useEffect} from 'react';
 import styled from 'styled-components';
 import {useSelector} from "react-redux";
-import {photoActions} from "../../redux/ActionCreators";
+import {SearchPhotoActions} from "../../redux/ActionCreators";
 import PhotoList from "../components/PhotoList/PhotoList";
 import {useRouteMatch} from 'react-router-dom';
 
-const SearchContainer = () => {
+const SearchPhotoContainer = () => {
 
     const match = useRouteMatch("/search/photos/:query")
 
     const query = match.params.query;
 
-    const {searchResult} = useSelector(state => state.photo);
+    const {searchResult} = useSelector(state => state.search);
 
     useEffect(() => {
         searchPhoto();
     }, [query])
 
     const searchPhoto = () => {
-        photoActions.searchPhoto({
-            per_page: 20,
+        SearchPhotoActions.searchPhoto({
+            per_page:20,
             query
         })
     }
@@ -35,4 +35,4 @@ const Container = styled.div`
 
 `;
 
-export default SearchContainer;
+export default SearchPhotoContainer;

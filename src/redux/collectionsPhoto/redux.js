@@ -1,20 +1,16 @@
 import {createActions, createReducer} from "reduxsauce";
 
 const initialState = {
-    list: [],
-    singlePhoto:{},
-    photoRelated:{
+    collection:{
         results:[]
     }
 }
 
 export const Action = createActions({
     updateState: ['props'],
-    listPhotos: ['data'],
-    getPhoto:['id', 'data'],
-    getPhotoRelated:['id', 'data'],
+    collectionPhoto:['data']
 }, {
-    prefix: 'PHOTO/'
+    prefix: 'COLLECTION/'
 });
 
 export default createReducer(initialState,{
