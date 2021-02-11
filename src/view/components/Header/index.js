@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import SearchBox from "../searchBox";
 import {navigate} from "../../../lib/History";
 import Nav from "./Nav";
-import Lnb from "./Lnb";
 import {LogoSvg} from "../Svg";
 
 const Header = () => {
@@ -24,20 +23,12 @@ const Header = () => {
                     <SearchBox shape={"round"}/>
                     <Nav/>
                 </Container>
-                <Lnb/>
             </HeaderWrap>
         </>
     )
 }
 
 const HeaderWrap = styled.div`
-  position: sticky;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: #fff;
-  box-shadow: 0 0 8px 3px rgba(0,0,0,0.1);
 `;
 
 const Container = styled.div`

@@ -158,6 +158,7 @@ export const UnsplashButton = styled.button`
 
   &:hover {
     background: #fff;
+    color: #111;
     
     svg{
       fill: #111;

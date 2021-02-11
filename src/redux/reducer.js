@@ -6,6 +6,7 @@ import topicReducer from './topic/redux';
 import photoReducer from './photo/redux';
 import searchphotoReducer from './searchPhoto/redux';
 import collectionsPhotoReducer from './collectionsPhoto/redux';
+import searchUsers from './searchUsers/redux';
 
 const reducers = combineReducers({
     app: appReducer,
@@ -14,6 +15,7 @@ const reducers = combineReducers({
     photo: photoReducer,
     search: searchphotoReducer,
     collection: collectionsPhotoReducer,
+    searchUsers: searchUsers,
 });
 
 export default reducers;

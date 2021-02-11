@@ -3,8 +3,6 @@ import styled from 'styled-components';
 import {AddSvg, ChooseSvg, CloseSvg, InfoSvg, LikeSvg, ShareSvg} from "../Svg";
 import {UnsplashButton} from "../Button/Button.Styled";
 import {Overlay} from "../Layout/Layout.Styled";
-import cn from 'classnames';
-import {navigate} from "../../../lib/History";
 
 const PhotoDetailCard = ({singlePhoto = {}, closePopup, children}) => {
 

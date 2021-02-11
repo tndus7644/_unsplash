@@ -25,7 +25,7 @@ const SearchBox = ({shape}) => {
                         <SearchSvg/>
                     </Button>
                     <Input type="text"
-                           placeholder="Search free high-resolution photos"
+                           placeholder="SearchPhotos free high-resolution photos"
                            value={value}
                            onChange={onChange}
                     />

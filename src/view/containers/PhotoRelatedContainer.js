@@ -18,7 +18,7 @@ const PhotoRelatedContainer = ({id}) => {
     }
 
     return(
-        <Container>
+        <Container className={"PhotoRelatedContainer"}>
             <PhotoList photos={photoRelated.results}/>
         </Container>
     )

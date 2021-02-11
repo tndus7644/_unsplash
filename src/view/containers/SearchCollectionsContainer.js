@@ -3,13 +3,13 @@ import styled from 'styled-components';
 import {useRouteMatch} from "react-router-dom";
 import {useSelector} from "react-redux";
 import PhotoCollectionsList from "../components/PhotoCollections/PhotoCollectionsList";
-import {CollectionsPhotos} from "../../redux/ActionCreators";
+import {CollectionsPhotosActions} from "../../redux/ActionCreators";
 
-const CollectionsPhotoContainer = () => {
+const SearchCollectionsContainer = () => {
 
     const match = useRouteMatch("/search/collections/:query")
 
-    const query = match.params.query;
+    const query = match?.params?.query;
 
     const {collection} = useSelector(state => state.collection);
 
@@ -18,8 +18,9 @@ const CollectionsPhotoContainer = () => {
     },[query])
 
     const Collections = () => {
-        CollectionsPhotos.collectionPhoto({
-            query
+        CollectionsPhotosActions.collectionPhoto({
+            query,
+            per_page:9
         })
     }
 
@@ -27,7 +28,7 @@ const CollectionsPhotoContainer = () => {
 
 
     return (
-        <Container>
+        <Container className={"SearchCollectionsContainer"}>
             <PhotoCollectionsList collection={collection?.results}/>
         </Container>
     )
@@ -37,4 +38,4 @@ const Container = styled.div`
 
 `;
 
-export default CollectionsPhotoContainer;
+export default SearchCollectionsContainer;

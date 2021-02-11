@@ -20,7 +20,7 @@ const PhotoListContainer = () => {
 
 
     return(
-        <Container>
+        <Container className={"PhotoListContainer"}>
             <PhotoList photos={list}/>
         </Container>
     )

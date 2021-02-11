@@ -7,7 +7,7 @@ const PhotoCollectionsList = ({collection = []}) => {
 
     return(
 
-        <Container>
+        <Container className={"PhotoCollectionsList"}>
             {
                 collection.map((item, index) => <PhotoCollectionsCard key={index} {...item}/>)
             }
@@ -16,7 +16,9 @@ const PhotoCollectionsList = ({collection = []}) => {
 }
 
 const Container = styled.div`
-
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 `;
 
 export default PhotoCollectionsList;

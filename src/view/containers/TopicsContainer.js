@@ -5,18 +5,18 @@ import {topicActions} from "../../redux/ActionCreators";
 const TopicsContainer = () => {
 
     useEffect(() => {
-        getTopic();
+        listTopic();
     }, [])
 
-    const getTopic = () => {
-        topicActions.getTopics({
+    const listTopic = () => {
+        topicActions.listTopics({
             per_page:20
         })
     }
 
 
     return (
-        <Container>
+        <Container className={"TopicsContainer"}>
         </Container>
     )
 }

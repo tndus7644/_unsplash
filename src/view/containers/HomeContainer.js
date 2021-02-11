@@ -5,7 +5,7 @@ import Visual from "../components/Home/Visual";
 const HomeContainer = () => {
 
     return(
-        <Container>
+        <Container className={"HomeContainer"}>
             <Visual/>
         </Container>
     )
