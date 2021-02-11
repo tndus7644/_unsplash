@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import {navigate} from "../../../lib/History";
 
 const TopicList = ({data = []}) => {
 
     return (
         <Container>
             {
-                data.map((item, index) => <TopicItem key={index}>{item.title}</TopicItem>)
+                data.map((item, index) => <TopicItem onClick={() => navigate(`/topics/${item?.slug}`)} key={index}>{item.title}</TopicItem>)
             }
         </Container>
     )

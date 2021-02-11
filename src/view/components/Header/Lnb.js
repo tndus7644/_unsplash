@@ -8,7 +8,6 @@ const Lnb = () => {
 
     const {list} = useSelector(state => state.topic)
 
-
     return (
         <Container>
             <TopicsContainer/>

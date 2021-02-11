@@ -25,7 +25,7 @@ const SearchPhotoContainer = () => {
     }
 
     return (
-        <Container>
+        <Container className={"SearchPhotoContainer"}>
             <PhotoList photos={searchResult?.results}/>
         </Container>
     )

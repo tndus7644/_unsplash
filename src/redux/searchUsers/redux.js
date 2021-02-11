@@ -1,14 +1,14 @@
 import {createActions, createReducer} from "reduxsauce";
 
 const initialState = {
-    list:[],
-    topics:{}
+    UsersResults:{
+        results:[]
+    }
 }
 
 export const Action = createActions({
     updateState: ['props'],
-    listTopics:['data'],
-    getTopics:['slug']
+    SearchUsers:['data']
 }, {
     prefix: 'TOPIC/'
 });

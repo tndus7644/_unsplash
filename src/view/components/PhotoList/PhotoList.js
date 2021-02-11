@@ -34,7 +34,6 @@ const Groups = styled.div`
 `;
 
 const Group = styled.div`
-
   width: 33.3333%;
 `;
 
