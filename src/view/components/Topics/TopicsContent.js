@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import TopicDescription from "./TopicDescription";
+import TopicInfo from "./TopicInfo";
 
 const TopicsContent = ({topics}) => {
 

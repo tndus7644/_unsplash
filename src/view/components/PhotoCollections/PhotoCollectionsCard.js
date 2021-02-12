@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import {useEffect} from "react/cjs/react.production.min";
 
 const PhotoCollectionsCard = (props) => {
 
@@ -20,9 +19,6 @@ const PhotoCollectionsCard = (props) => {
 
     const PhotoTags = tags.slice(0, 3)
 
-    if (preview_photos === null) {
-        return <div>존재하지 않습니다.</div>
-    }
 
     console.log("collectionsPhoto", collectionsPhoto)
 

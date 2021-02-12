@@ -159,3 +159,26 @@ export const FollowSvg = () => {
     )
 }
 
+export const StatusSvg = () => {
+    return(
+        <svg width="32" height="32" className="_1wVHI" version="1.1" viewBox="0 0 32 32" aria-hidden="false">
+            <path
+                d="M16 2.7C8.7 2.7 2.7 8.7 2.7 16s6 13.3 13.3 13.3 13.3-6 13.3-13.3S23.3 2.7 16 2.7zm-.7 24v-8.3h-4.6l6.7-13v8.3h4.5l-6.6 13z"/>
+        </svg>
+    )
+}
+
+export const CuratorSvg = () => {
+    return(
+        <svg width="32" height="32" className="_1wVHI" version="1.1" viewBox="0 0 32 32" aria-hidden="false">
+            <path
+                d="M16 2.7C8.6 2.7 2.7 8.6 2.7 16s6 13.3 13.3 13.3 13.3-6 13.3-13.3S23.4 2.7 16 2.7zm0 4c2.2 0 4 1.8 4 4s-1.8 4-4 4-4-1.8-4-4 1.8-4 4-4zm0 18.9c-3.3 0-6.3-1.7-8-4.3 0-2.7 5.3-4.1 8-4.1s8 1.5 8 4.1c-1.7 2.6-4.7 4.3-8 4.3z"/>
+        </svg>
+    )
+}
+
+
+
+
+
+

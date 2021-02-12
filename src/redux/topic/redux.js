@@ -2,7 +2,10 @@ import {createActions, createReducer} from "reduxsauce";
 
 const initialState = {
     list:[],
-    topics:{}
+    topics:{
+        owners:[],
+        top_contributors:[]
+    }
 }
 
 export const Action = createActions({
