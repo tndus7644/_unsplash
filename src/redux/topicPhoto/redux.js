@@ -1,17 +1,14 @@
 import {createActions, createReducer} from "reduxsauce";
 
 const initialState = {
-    collection:{
-        results:[],
-        preview_photos:[]
-    }
+    getTopicPhoto:[]
 }
 
 export const Action = createActions({
     updateState: ['props'],
-    collectionPhoto:['data']
+    topicPhoto:['slug', 'data']
 }, {
-    prefix: 'COLLECTION/'
+    prefix: 'TOPIC_PHOTO/'
 });
 
 export default createReducer(initialState,{

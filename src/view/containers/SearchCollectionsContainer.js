@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {useRouteMatch} from "react-router-dom";
 import {useSelector} from "react-redux";
 import PhotoCollectionsList from "../components/PhotoCollections/PhotoCollectionsList";
-import {CollectionsPhotosActions} from "../../redux/ActionCreators";
+import {collectionsPhotosActions} from "../../redux/ActionCreators";
 
 const SearchCollectionsContainer = () => {
 
@@ -18,9 +18,9 @@ const SearchCollectionsContainer = () => {
     },[query])
 
     const Collections = () => {
-        CollectionsPhotosActions.collectionPhoto({
+        collectionsPhotosActions.collectionPhoto({
             query,
-            per_page:9
+            per_page:12
         })
     }
 

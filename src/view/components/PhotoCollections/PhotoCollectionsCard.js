@@ -11,13 +11,38 @@ const PhotoCollectionsCard = (props) => {
         tags
     } = props
 
+    const PhotoTags = tags.slice(0, 3)
     const collectionsPhoto = preview_photos?.slice(0, 3)
+
+    if(preview_photos === null){
+        return <Container>
+            <Collections>
+                <CollectionList className={"CollectionList"}>
+                    <div>
+                        <img className={"MainThumb"} src="" alt=""/>
+                    </div>
+                    <div>
+                        <img className={"SubThumb"} src="" alt=""/>
+                        <img className={"SubThumb"} src="" alt=""/>
+                    </div>
+                </CollectionList>
+                <Title className={"title"}>
+                    {title}
+                </Title>
+            </Collections>
+            <Total>
+                {total_photos} photos &#183; Curated by <span>{user?.first_name}</span>
+            </Total>
+            <TagGroup>
+                {PhotoTags.map((item, index) => <Tags key={index}>{item.title}</Tags>)}
+            </TagGroup>
+        </Container>
+    }
 
     const photo1 = collectionsPhoto[0]?.urls?.regular
     const photo2 = collectionsPhoto[1]?.urls?.thumb
     const photo3 = collectionsPhoto[2]?.urls?.thumb
 
-    const PhotoTags = tags.slice(0, 3)
 
 
     console.log("collectionsPhoto", collectionsPhoto)

@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import styled from 'styled-components';
 import {useSelector} from "react-redux";
-import {SearchPhotoActions} from "../../redux/ActionCreators";
+import {searchPhotoActions} from "../../redux/ActionCreators";
 import PhotoList from "../components/PhotoList/PhotoList";
 import {useRouteMatch} from 'react-router-dom';
 
@@ -18,7 +18,7 @@ const SearchPhotoContainer = () => {
     }, [query])
 
     const searchPhoto = () => {
-        SearchPhotoActions.searchPhoto({
+        searchPhotoActions.searchPhoto({
             per_page:20,
             query
         })

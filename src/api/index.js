@@ -8,7 +8,8 @@ const API = {
     getPhoto:(id, data) => FetchJson.get(`/photos/${id}`, data),
     getPhotoRelated:(id, data) => FetchJson.get(`/photos/${id}/related`, data),
     collectionPhoto:(data) => FetchJson.get(`/search/collections`, data),
-    searchUsers:(data) => FetchJson.get(`/search/users`, data)
+    searchUsers:(data) => FetchJson.get(`/search/users`, data),
+    getTopicPhoto:(slug, data) => FetchJson.get(`/topics/${slug}/photos`, data),
 }
 
 export default API;

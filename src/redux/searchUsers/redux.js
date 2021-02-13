@@ -10,7 +10,7 @@ export const Action = createActions({
     updateState: ['props'],
     SearchUsers:['data']
 }, {
-    prefix: 'TOPIC/'
+    prefix: 'SEARCH_USERS/'
 });
 
 export default createReducer(initialState,{

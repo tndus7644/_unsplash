@@ -5,7 +5,7 @@ import {topicActions} from "../../redux/ActionCreators";
 import TopicsContent from "../components/Topics/TopicsContent";
 import TopicInfo from "../components/Topics/TopicInfo";
 
-const TopicListContainer = ({match}) => {
+const TopicInfoContainer = ({match}) => {
 
     const slug = match.params.slug;
 
@@ -22,7 +22,7 @@ const TopicListContainer = ({match}) => {
     console.log("topics", topics)
 
     return(
-        <Container className={"TopicListContainer"}>
+        <Container className={"TopicInfoContainer"}>
             <TopicsContent topics={topics}/>
             <TopicInfo topics={topics}/>
         </Container>
@@ -34,4 +34,4 @@ const Container = styled.div`
   justify-content: space-between;
 `;
 
-export default TopicListContainer;
+export default TopicInfoContainer;

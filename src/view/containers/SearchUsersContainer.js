@@ -1,6 +1,6 @@
 import React,{useEffect} from 'react';
 import styled from 'styled-components';
-import {SearchUserActions} from "../../redux/ActionCreators";
+import {searchUserActions} from "../../redux/ActionCreators";
 import {useSelector} from "react-redux";
 import UsersList from "../components/SearchUsers/UsersList";
 
@@ -13,7 +13,7 @@ const SearchUsersContainer = ({match}) => {
     },[query])
 
     const SearchResult = () => {
-        SearchUserActions.SearchUsers({
+        searchUserActions.SearchUsers({
             query,
             per_page:12
         })

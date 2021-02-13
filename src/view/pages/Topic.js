@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import TopicListContainer from "../containers/TopicListContainer";
+import TopicInfoContainer from "../containers/TopicInfoContainer";
 import HeaderContainer from "../containers/HeaderContainer";
 import {SearchContainer} from "../../styled/Container";
+import TopicsPhotoContainer from "../containers/TopicsPhotoContainer";
 
 const Topic = ({match}) => {
 
@@ -10,7 +11,8 @@ const Topic = ({match}) => {
         <>
             <HeaderContainer/>
             <Container>
-                <TopicListContainer match={match}/>
+                <TopicInfoContainer match={match}/>
+                <TopicsPhotoContainer match={match}/>
             </Container>
         </>
     )
