@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {UnsplashButton} from "../Button/Button.Styled";
 import {AddSvg, DownloadSvg, LikeSvg} from "../Svg";
 import {navigate} from "../../../lib/History";
-import {useHistory, useLocation} from "react-router-dom";
+import {useLocation} from "react-router-dom";
 
 const PhotoCard = (props) => {
 

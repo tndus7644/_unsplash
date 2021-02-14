@@ -86,7 +86,6 @@ const Id = styled.div`
 
 const Photos = styled.div`
   display: flex;
-  justify-content: space-between;
 `;
 
 const Img = styled.div`
@@ -94,7 +93,13 @@ const Img = styled.div`
   height: 91px;
   overflow: hidden;
   background: #ddd;
-  img{
+  margin-left: 8px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  img {
     object-fit: cover;
     width: 100%;
     height: 100%;
