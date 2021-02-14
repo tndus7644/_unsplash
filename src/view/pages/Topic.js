@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import TopicInfoContainer from "../containers/TopicInfoContainer";
 import HeaderContainer from "../containers/HeaderContainer";
-import {SearchContainer} from "../../styled/Container";
+import {SearchContainer} from "../../styled/Container.Styled";
 import TopicsPhotoContainer from "../containers/TopicsPhotoContainer";
 
 const Topic = ({match}) => {

@@ -20,10 +20,10 @@ const axiosInstance = axios.create({
 const request = async (contentType, method, url, data) => {
     try {
         const config = {
-            url,
-            method,
-            headers: {
-                'Content-Type': contentType,
+                url,
+                method,
+                headers: {
+                    'Content-Type': contentType,
             }
         }
 

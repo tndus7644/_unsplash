@@ -1,6 +1,8 @@
 import React,{useState, useEffect} from 'react';
 import styled from 'styled-components';
 import {CuratorSvg, PhotoSvg, StatusSvg, UserSvg} from "../Svg";
+import {useSelector} from "react-redux";
+import {appActions} from "../../../redux/ActionCreators";
 
 const TopicInfo = ({topics}) => {
 
@@ -11,6 +13,15 @@ const TopicInfo = ({topics}) => {
         top_contributors,
         title
     } = topics
+
+    const {popup} = useSelector(state => state.app);
+
+
+    const handlePopup = () => {
+        appActions.updateState({
+            popup:!popup
+        })
+    }
 
     return (
         <Container>
@@ -53,7 +64,7 @@ const TopicInfo = ({topics}) => {
                     </Contributors>
                 </Info>
             </InfoBox>
-            <Submit>
+            <Submit onClick={handlePopup}>
                 Submit to <span>{title}</span>
             </Submit>
         </Container>
@@ -154,7 +165,7 @@ const Contributors = styled.div`
   display: flex;
 `;
 
-const Submit = styled.div`
+const Submit = styled.button`
   margin-top: 15px;
   background: #111;
   border-radius: 4px;
@@ -163,6 +174,7 @@ const Submit = styled.div`
   padding: 15px;
   text-align: center;
   cursor: pointer;
+  border: 0;
   
   span{
     font-weight: bold;

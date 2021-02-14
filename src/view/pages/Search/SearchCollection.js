@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import {SearchName} from "../../../styled/SearchName";
+import {SearchNameStyled} from "../../../styled/SearchName.Styled";
 import SearchCollectionsContainer from "../../containers/SearchCollectionsContainer";
-import {SearchContainer} from "../../../styled/Container";
+import {SearchContainer} from "../../../styled/Container.Styled";
 import SearchHeaderContainer from "../../containers/SearchHeaderContainer";
 
 const SearchCollection = ({match}) => {
@@ -21,7 +21,7 @@ const SearchCollection = ({match}) => {
 const Container = styled(SearchContainer)`
 `;
 
-const Title = styled(SearchName)`
+const Title = styled(SearchNameStyled)`
 `;
 
 export default SearchCollection;

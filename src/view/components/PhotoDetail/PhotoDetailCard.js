@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect} from 'react';
 import styled from 'styled-components';
 import {AddSvg, ChooseSvg, CloseSvg, InfoSvg, LikeSvg, ShareSvg} from "../Svg";
 import {UnsplashButton} from "../Button/Button.Styled";
@@ -8,7 +8,7 @@ const PhotoDetailCard = ({singlePhoto = {}, closePopup, children}) => {
 
     const {
         urls,
-        user
+        user,
     } = singlePhoto
 
 
@@ -115,7 +115,7 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow-y: scroll;  
+  overflow-y: scroll;
   border-radius: 4px;
 
 `;

@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react';
 import styled from 'styled-components';
 import SearchPhotoContainer from "../../containers/SearchPhotoContainer";
-import {SearchName} from "../../../styled/SearchName";
-import {SearchContainer} from "../../../styled/Container";
+import {SearchNameStyled} from "../../../styled/SearchName.Styled";
+import {SearchContainer} from "../../../styled/Container.Styled";
 import SearchHeaderContainer from "../../containers/SearchHeaderContainer";
 
 const SearchPhotos = ({match}) => {
@@ -21,7 +21,7 @@ const SearchPhotos = ({match}) => {
 const Container = styled(SearchContainer)`
 `;
 
-const Title = styled(SearchName)`
+const Title = styled(SearchNameStyled)`
 `;
 
 export default SearchPhotos;
