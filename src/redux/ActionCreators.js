@@ -9,6 +9,7 @@ import {Action as SearchPhotoAction} from './searchPhoto/redux'
 import {Action as CollectionsPhoto} from './collectionsPhoto/redux'
 import {Action as SearchUsers} from './searchUsers/redux'
 import {Action as TopicPhotoAction} from './topicPhoto/redux'
+import {Action as RelatedPhotoAction} from './relatedPhoto/redux'
 
 const {dispatch} = store;
 
@@ -20,3 +21,4 @@ export const searchPhotoActions = bindActionCreators(SearchPhotoAction.Creators,
 export const collectionsPhotosActions = bindActionCreators(CollectionsPhoto.Creators, dispatch);
 export const searchUserActions = bindActionCreators(SearchUsers.Creators, dispatch);
 export const topicPhotoActions = bindActionCreators(TopicPhotoAction.Creators, dispatch);
+export const relatedPhotoActions = bindActionCreators(RelatedPhotoAction.Creators, dispatch);

@@ -78,15 +78,13 @@ export const setGroups = (data) => {
     let groupsRatio = [0, 0, 0];
     for (let i = 0; i < data.length; i++) {
         const ratio = data[i].height / data[i].width;
-
         const minValue = Math.min(...groupsRatio);
         const minIndex = groupsRatio.indexOf(minValue);
+
         groups[minIndex].push(data[i]);
         groupsRatio[minIndex] = groupsRatio[minIndex] + ratio;
     }
-
-
-
+    
     return groups;
 
 };

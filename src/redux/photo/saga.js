@@ -23,15 +23,6 @@ const saga = function* () {
             }
         }),
 
-        takeLatest(Action.Types.GET_PHOTO_RELATED, function* ({id, data}) {
-            const result = yield call(API.getPhotoRelated, id, data);
-            console.log("[saga getPhotoRelated]", result)
-            if (result) {
-                yield put(Action.Creators.updateState({
-                    photoRelated: result
-                }))
-            }
-        })
     ])
 }
 

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Header from "../components/Header";
 import SearchResultBar from "../components/Header/SearchResultBar";
+import FilterPhoto from "../components/Header/FilterPhoto";
 
 const SearchHeaderContainer = () => {
 

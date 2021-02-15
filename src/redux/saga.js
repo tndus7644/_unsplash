@@ -7,6 +7,7 @@ import collectionSaga from './collectionsPhoto/saga';
 import searchSaga from './searchPhoto/saga';
 import searchUsersSaga from './searchUsers/saga';
 import topicPhotoSaga from './topicPhoto/saga';
+import relatedPhotoSaga from './relatedPhoto/saga';
 import {fork} from "redux-saga/effects";
 
 function* sagas() {
@@ -18,7 +19,8 @@ function* sagas() {
         fork(searchSaga),
         fork(collectionSaga),
         fork(searchUsersSaga),
-        fork(topicPhotoSaga)
+        fork(topicPhotoSaga),
+        fork(relatedPhotoSaga)
     ])
 }
 

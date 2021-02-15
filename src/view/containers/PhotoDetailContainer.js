@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import {useSelector} from "react-redux";
 import {useLocation, useRouteMatch} from 'react-router-dom'
 
-import PhotoListContainer from "./PhotoListContainer";
 import PhotoDetailCard from "../components/PhotoDetail/PhotoDetailCard";
 import {photoActions} from "../../redux/ActionCreators";
 import {navigate} from "../../lib/History";
@@ -34,7 +33,6 @@ const PhotoDetailContainer = () => {
 
     return (
         <Container className={"PhotoDetailContainer"}>
-            <PhotoListContainer/>
             <PhotoDetailCard singlePhoto={singlePhoto} closePopup={closePopup}>
                 <PhotoRelatedContainer id={id}/>
             </PhotoDetailCard>

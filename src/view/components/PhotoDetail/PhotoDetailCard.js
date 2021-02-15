@@ -109,6 +109,7 @@ const GalleryPopup = styled.div`
 
 const Content = styled.div`
   width: 90vw;
+  height: 90vh;
   margin: 0 auto;
   background: #fff;
   padding: 15px;
