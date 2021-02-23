@@ -2,13 +2,22 @@ import React from 'react';
 import styled from 'styled-components';
 import Header from "../components/Header";
 import Lnb from "../components/Header/Lnb";
+import {Route, useLocation} from "react-router-dom";
+import SearchResultBar from "../components/Header/SearchResultBar";
 
 const HeaderContainer = () => {
+
+    const location = useLocation();
+
 
     return(
         <Container className={"HeaderContainer"}>
             <Header/>
-            <Lnb/>
+            {
+                (location.pathname === '/' || location.pathname.startsWith('/topics')) &&
+                    <Lnb/>
+            }
+            <Route path={["/search/:category/:query"]} component={SearchResultBar}/>
         </Container>
     )
 }

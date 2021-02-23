@@ -3,27 +3,43 @@ import styled from 'styled-components';
 import {CollectionSvg, PhotoSvg, UserSvg} from "../Svg";
 import {navigate} from "../../../lib/History";
 import {useRouteMatch} from "react-router-dom";
+import cn from 'classnames';
 
 const SearchResultBar = () => {
 
-    const match = useRouteMatch("/search/photos/:query");
+    const match = useRouteMatch("/search/:category/:query");
 
-    const query = match?.params?.query;
+    const {query, category} = match?.params;
+
+    const searchRoutes = [
+        {
+            name: 'photos',
+            to: `/search/photos/${query}`,
+            icon: <PhotoSvg/>
+        },
+        {
+            name: 'collections',
+            to: `/search/collections/${query}`,
+            icon: <CollectionSvg/>
+        },
+        {
+            name: 'users',
+            to: `/search/users/${query}`,
+            icon: <UserSvg/>
+        }
+    ]
 
     return (
         <Container>
-            <Search onClick={() => navigate(`/search/photos/${query}`)}>
-                <PhotoSvg/>
-                <h1>Photos</h1>
-            </Search>
-            <Search onClick={() => navigate(`/search/collections/${query}`)}>
-                <CollectionSvg/>
-                <h1>Collections</h1>
-            </Search>
-            <Search onClick={() => navigate(`/search/users/${query}`)}>
-                <UserSvg/>
-                <h1>Users</h1>
-            </Search>
+            {
+                searchRoutes.map((item, index) =>
+                    <Search key={index}
+                            className={cn({isActive: category === item.name})}
+                            onClick={() => navigate(item.to)}>
+                        {item.icon}
+                        {item.name}
+                    </Search>)
+            }
         </Container>
     )
 }
@@ -43,11 +59,13 @@ const Search = styled.a`
   color: #777;
   transition: 0.1s;
 
+  &.isActive,
   &:hover {
-    color: #000;
-    
-    svg{
-      fill:#000;
+    opacity: 1;
+    color: #111;
+
+    svg {
+      opacity: 1;
     }
   }
 
@@ -59,12 +77,9 @@ const Search = styled.a`
     width: 18px;
     display: flex;
     align-items: center;
-    fill: #cdcdcd;
     transition: 0.1s;
-  }
-  
-  .collection &{
-    color: #000;
+    opacity: 0.2;
+    margin-right: 5px;
   }
 
 `;

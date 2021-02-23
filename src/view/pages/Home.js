@@ -1,15 +1,13 @@
 import React from 'react'
 import styled from 'styled-components';
-import HomeContainer from "../containers/HomeContainer";
 import PhotoListContainer from "../containers/PhotoListContainer";
-import HeaderContainer from "../containers/HeaderContainer";
+import Visual from "../components/Home/Visual";
 
 const Home = () => {
 
     return (
         <Container>
-            <HeaderContainer/>
-            <HomeContainer/>
+            <Visual/>
             <PhotoListContainer/>
         </Container>
     )

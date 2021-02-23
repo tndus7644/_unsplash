@@ -53,6 +53,9 @@ export const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
     text-decoration: none;
+    ::-webkit-scrollbar{
+      display: none; !important;
+    }
   }
 
   a {
@@ -63,6 +66,7 @@ export const GlobalStyle = createGlobalStyle`
     vertical-align: top;
     max-width: 100%;
   }
+  
 `;
 
 

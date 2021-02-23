@@ -2,81 +2,61 @@ import React, {useEffect} from 'react';
 import styled from 'styled-components';
 import {AddSvg, ChooseSvg, CloseSvg, InfoSvg, LikeSvg, ShareSvg} from "../Svg";
 import {UnsplashButton} from "../Button/Button.Styled";
-import {Overlay} from "../Layout/Layout.Styled";
 
-const PhotoDetailCard = ({singlePhoto = {}, closePopup, children}) => {
-
-    const {
-        urls,
-        user,
-    } = singlePhoto
-
+const PhotoDetailCard = ({user, onClose, urls}) => {
 
     return (
 
         <Container className={"PhotoDetailCard"}>
-            <GalleryPopup>
-                <Overlay className={"overlay"} fixed/>
-                <Content>
-                    <Button onClick={closePopup}>
-                        <CloseSvg/>
-                    </Button>
-                    <TopInfo>
-                        <User>
-                            <img src={user?.profile_image?.small} alt=""/>
-                            <Username>
-                                <h1>{user?.name}</h1>
-                                <h3>{user?.instagram_username}</h3>
-                            </Username>
-                        </User>
-                        <ButtonGroup>
-                            <Like>
-                                <LikeSvg/>
-                            </Like>
-                            <Add>
-                                <AddSvg/>
-                            </Add>
-                            <Download>
-                                Download free
-                                <ChooseSvg/>
-                            </Download>
-                        </ButtonGroup>
-                    </TopInfo>
-                    <Img>
-                        <img src={urls?.regular} alt=""/>
-                    </Img>
-                    <BottomInfo>
-                        <Share>
-                            <ShareSvg/>
-                            Share
-                        </Share>
-                        <Info>
-                            <InfoSvg/>
-                            Info
-                        </Info>
-                    </BottomInfo>
-                    {children}
-                </Content>
-            </GalleryPopup>
+            <Content>
+                <Button onClick={onClose}>
+                    <CloseSvg/>
+                </Button>
+                <TopInfo>
+                    <User>
+                        <img src={user?.profile_image?.small} alt=""/>
+                        <Username>
+                            <h1>{user?.name}</h1>
+                            <h3>{user?.instagram_username}</h3>
+                        </Username>
+                    </User>
+                    <ButtonGroup>
+                        <Like>
+                            <LikeSvg/>
+                        </Like>
+                        <Add>
+                            <AddSvg/>
+                        </Add>
+                        <Download>
+                            Download free
+                            <ChooseSvg/>
+                        </Download>
+                    </ButtonGroup>
+                </TopInfo>
+                <Img>
+                    <img src={urls?.regular} alt=""/>
+                </Img>
+                <BottomInfo>
+                    <Share>
+                        <ShareSvg/>
+                        Share
+                    </Share>
+                    <Info>
+                        <InfoSvg/>
+                        Info
+                    </Info>
+                </BottomInfo>
+            </Content>
         </Container>
 
     )
 }
 
 const Container = styled.div`
-  z-index: 1000;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  .overlay {
-    z-index: -1;
-  }
 `;
 
 const Button = styled.button`

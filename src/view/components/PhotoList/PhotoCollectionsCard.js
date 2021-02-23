@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Tags from "../Tags";
 
 const PhotoCollectionsCard = (props) => {
 
@@ -11,39 +12,14 @@ const PhotoCollectionsCard = (props) => {
         tags
     } = props
 
-    const PhotoTags = tags.slice(0, 3)
-    const collectionsPhoto = preview_photos?.slice(0, 3)
+    if(!preview_photos) return null;
 
-    if(preview_photos === null){
-        return <Container>
-            <Collections>
-                <CollectionList className={"CollectionList"}>
-                    <div>
-                        <img className={"MainThumb"} src="" alt=""/>
-                    </div>
-                    <div>
-                        <img className={"SubThumb"} src="" alt=""/>
-                        <img className={"SubThumb"} src="" alt=""/>
-                    </div>
-                </CollectionList>
-                <Title className={"title"}>
-                    {title}
-                </Title>
-            </Collections>
-            <Total>
-                {total_photos} photos &#183; Curated by <span>{user?.first_name}</span>
-            </Total>
-            <TagGroup>
-                {PhotoTags.map((item, index) => <Tags key={index}>{item.title}</Tags>)}
-            </TagGroup>
-        </Container>
-    }
+    const PhotoTags = tags.slice(0, 3)
+    const collectionsPhoto = preview_photos?.slice(0, 3) || [];
 
     const photo1 = collectionsPhoto[0]?.urls?.regular
     const photo2 = collectionsPhoto[1]?.urls?.thumb
     const photo3 = collectionsPhoto[2]?.urls?.thumb
-
-
 
     console.log("collectionsPhoto", collectionsPhoto)
 
@@ -54,7 +30,7 @@ const PhotoCollectionsCard = (props) => {
                 <Collections>
                     <CollectionList className={"CollectionList"}>
                         <div>
-                            <img className={"MainThumb"} src={photo1} alt=""/>
+                                <img className={"MainThumb"} src={photo1} alt=""/>
                         </div>
                         <div>
                             <img className={"SubThumb"} src={photo2} alt=""/>
@@ -69,7 +45,7 @@ const PhotoCollectionsCard = (props) => {
                     {total_photos} photos &#183; Curated by <span>{user?.first_name}</span>
                 </Total>
                 <TagGroup>
-                    {PhotoTags.map((item, index) => <Tags key={index}>{item.title}</Tags>)}
+                    <Tags tags={PhotoTags}/>
                 </TagGroup>
             </Container>
         </>
@@ -158,21 +134,5 @@ const TagGroup = styled.div`
   display: flex;
 `;
 
-const Tags = styled.div`
-  cursor: pointer;
-  background: #eee;
-  padding: 5px 7px 4px;
-  color: #777;
-  margin: 10px 10px 0 0;
-  border-radius: 2px;
-  font-size: 14px;
-  text-transform: capitalize;
-  transition: 0.2s;
-
-  &:hover {
-    background: #ddd;
-    color: #333;
-  }
-`;
 
 export default PhotoCollectionsCard;

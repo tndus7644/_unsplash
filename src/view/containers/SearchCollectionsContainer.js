@@ -29,7 +29,7 @@ const SearchCollectionsContainer = () => {
 
     return (
         <Container className={"SearchCollectionsContainer"}>
-            <PhotoCollectionsList collection={collection?.results}/>
+            <PhotoCollectionsList data={collection?.results}/>
         </Container>
     )
 }

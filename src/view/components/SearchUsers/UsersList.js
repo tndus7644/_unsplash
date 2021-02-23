@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import UsersListCard from "./UsersListCard";
+import UsersListCard from "../PhotoList/UsersListCard";
 
 const UsersList = ({users}) => {
 

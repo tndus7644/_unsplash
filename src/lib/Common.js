@@ -1,4 +1,5 @@
 import moment from 'moment';
+import {useEffect} from 'react';
 
 const THOUSAND_COMMA_REGEX = /(\d)(?=(\d{3})+\b)/g;
 
@@ -88,4 +89,25 @@ export const setGroups = (data) => {
     return groups;
 
 };
+
+export const useObserver = (sentinelRef, worker) => {
+    const callback = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                worker()
+            } else {
+                console.log("outview")
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(callback)
+
+
+    useEffect(() => {
+        if (sentinelRef.current) {
+            observer.observe(sentinelRef.current)
+        }
+    }, [])
+}
 

@@ -49,3 +49,14 @@ export const Overlay = styled.div`
     right: 0;
     background-color:rgba(0,0,0, ${props => (props.alpha || 0.6)});
 `;
+
+
+export const Sentinel = styled.div`
+  height: 30px;
+  background: none;
+  position: absolute;
+  bottom: 60vh;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+`;

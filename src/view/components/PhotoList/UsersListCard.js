@@ -19,8 +19,8 @@ const UsersListCard = (props) => {
                     <img src={profile_image?.medium} alt=""/>
                 </Profile>
                 <Id>
-                    <h1>{name}</h1>
-                    <h3>{username}</h3>
+                    <p>{name}</p>
+                    <span>{username}</span>
                 </Id>
             </InfoBox>
             <Photos>
@@ -39,9 +39,9 @@ const UsersListCard = (props) => {
 
 const Container = styled.div`
   width: 416px;
+  max-height: 250px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  margin: 10px 0;
   padding: 15px;
   cursor: pointer;
   transition: 0.2s;
@@ -67,13 +67,13 @@ const Profile = styled.div`
 const Id = styled.div`
   margin-left: 20px;
 
-  h1 {
-    font-size: 20px;
+  p {
+    font-size: 15px;
     font-weight: bold;
     line-height: 1.6;
   }
 
-  h3 {
+  span {
     color: #777;
 
     &:before {

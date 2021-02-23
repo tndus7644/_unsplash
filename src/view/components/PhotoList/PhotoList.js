@@ -1,13 +1,23 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import styled from 'styled-components';
 import PhotoCard from "./PhotoCard";
 import {setGroups} from "../../../lib/Common";
+import {photoActions} from "../../../redux/ActionCreators";
 
-const PhotoList = ({photos}) => {
+const PhotoList = ({photos = []}) => {
 
-    if (photos.length === 0) return null;
 
     const groups = setGroups(photos);
+
+    const onClickPhoto = (id) => {
+        photoActions.updateState({
+            photoPopup: true
+        })
+        photoActions.getPhotoById(id);
+    }
+
+
+    if (photos.length === 0) return null;
 
     return (
         <Container>
@@ -16,7 +26,7 @@ const PhotoList = ({photos}) => {
                     <Group key={groupIndex}>
                         {group.map((item, index) =>
                             <Col key={index}>
-                                <PhotoCard {...item}/>
+                                <PhotoCard {...item} onClickPhoto={onClickPhoto}/>
                             </Col>
                         )}
                     </Group>
@@ -27,6 +37,7 @@ const PhotoList = ({photos}) => {
 }
 
 const Container = styled.div`
+  position: relative;
 `;
 
 const Groups = styled.div`
@@ -37,10 +48,6 @@ const Group = styled.div`
   width: 33.3333%;
 `;
 
-const Row = styled.div`
-  column-width: 350px;
-  column-gap: 0;
-`;
 
 const Col = styled.div`
   padding: 10px;

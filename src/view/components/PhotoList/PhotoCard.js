@@ -2,8 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import {UnsplashButton} from "../Button/Button.Styled";
 import {AddSvg, DownloadSvg, LikeSvg} from "../Svg";
-import {navigate} from "../../../lib/History";
-import {useLocation} from "react-router-dom";
 
 const PhotoCard = (props) => {
 
@@ -11,19 +9,15 @@ const PhotoCard = (props) => {
         alt_description,
         urls,
         user,
+        onClickPhoto = () => {},
         id
     } = props
 
-    const location = useLocation();
-
     return (
-        <Container>
+        <Container onClick={() => onClickPhoto(id)}>
             <Thumb>
-                <img className={"ListPhoto"} src={urls.regular} alt={alt_description} onClick={() => navigate({
-                    pathname: `/photos/${id}`,
-                    state: {from: location.pathname}
-                })}/>
-                <Info className={"Photo-info"}>
+                <img className={"listPhoto"} src={urls.regular} alt={alt_description}/>
+                <Info className={"photo-info"}>
                     <User>
                         <img src={user.profile_image.small} alt=""/>
                         <span>{user.name}</span>
@@ -62,7 +56,7 @@ const Thumb = styled.div`
   }
 
   &:hover {
-    .Photo-info {
+    .photo-info {
       opacity: 1;
     }
   }
