@@ -4,13 +4,13 @@ import TopicInfoContainer from "../containers/TopicInfoContainer";
 import {SearchContainer} from "../../styled/Container.Styled";
 import TopicsPhotoContainer from "../containers/TopicsPhotoContainer";
 
-const Topic = ({match}) => {
+const Topic = () => {
 
     return (
         <>
             <Container>
-                <TopicInfoContainer match={match}/>
-                <TopicsPhotoContainer match={match}/>
+                <TopicInfoContainer/>
+                <TopicsPhotoContainer/>
             </Container>
         </>
     )

@@ -12,10 +12,8 @@ const Routes = () => {
         <Switch>
             <Route path="/signin" component={SignIn}/>
             <Route exact path="/" component={Home}/>
-
             <Route path="/search/:category/:query" component={Search}/>
-
-            <Route path="/topics/:slug" component={Topic}/>
+            <Route exact path="/topics/:slug" component={Topic}/>
             <Route component={NotFound}/>
         </Switch>
     )

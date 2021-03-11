@@ -3,10 +3,13 @@ import styled from 'styled-components';
 import TopicPhotos from "../components/Topics/TopicPhotos";
 import {topicPhotoActions} from "../../redux/ActionCreators";
 import {useSelector} from "react-redux";
+import {useRouteMatch} from "react-router-dom";
 
-const TopicsPhotoContainer = ({match}) => {
+const TopicsPhotoContainer = () => {
 
-    const slug = match.params?.slug
+    const match = useRouteMatch("/topics/:slug");
+
+    const slug = match?.params?.slug
 
     useEffect(() => {
         topicPhotos();

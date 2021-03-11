@@ -1,18 +1,18 @@
-import React, {useEffect} from 'react';
+import React,{useEffect} from 'react';
 import styled from 'styled-components';
 import {topicActions} from "../../redux/ActionCreators";
 
 const TopicsContainer = () => {
-
-    useEffect(() => {
-        listTopic();
-    }, [])
 
     const listTopic = () => {
         topicActions.listTopics({
             per_page:20
         })
     }
+
+    useEffect(() => {
+        listTopic();
+    }, [])
 
 
     return (

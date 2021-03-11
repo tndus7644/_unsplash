@@ -4,8 +4,11 @@ import {useSelector} from "react-redux";
 import {topicActions} from "../../redux/ActionCreators";
 import TopicsContent from "../components/Topics/TopicsContent";
 import TopicInfo from "../components/Topics/TopicInfo";
+import {useRouteMatch} from "react-router-dom";
 
-const TopicInfoContainer = ({match}) => {
+const TopicInfoContainer = () => {
+
+    const match = useRouteMatch("/topics/:slug");
 
     const slug = match.params.slug;
 
