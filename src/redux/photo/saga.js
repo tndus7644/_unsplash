@@ -9,8 +9,7 @@ const saga = function* () {
             console.log("[saga getPhotos]", result)
             if (result) {
                 yield put(Action.Creators.updateState({
-                    list: result,
-                    currentPage : 1
+                    list: result
                 }))
             }
         }),
@@ -19,8 +18,8 @@ const saga = function* () {
             if(photo.list.length > 0){
                 const currentPage = photo.currentPage + 1;
                 const result = yield call(API.getPhotos, {
+                    per_page:12,
                     page: currentPage,
-                    per_page:12
                 })
                 console.log("[saga getPhotos]", result)
 

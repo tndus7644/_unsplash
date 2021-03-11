@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import {AddSvg, ChooseSvg, CloseSvg, InfoSvg, LikeSvg, ShareSvg} from "../Svg";
 import {UnsplashButton} from "../Button/Button.Styled";
@@ -75,16 +75,6 @@ const Button = styled.button`
   svg {
     fill: #fff;
   }
-`;
-
-
-const GalleryPopup = styled.div`
-  position: absolute;
-  top: 50px;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  overflow-y: auto;
 `;
 
 const Content = styled.div`

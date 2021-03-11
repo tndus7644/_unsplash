@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import PhotoCard from "./PhotoCard";
 import {setGroups} from "../../../lib/Common";

@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import {CuratorSvg, PhotoSvg, StatusSvg, UserSvg} from "../Svg";
 import {useSelector} from "react-redux";

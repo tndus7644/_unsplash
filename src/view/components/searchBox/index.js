@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import {navigate} from "../../../lib/History";
 import cn from 'classnames';
 import {SearchSvg} from "../Svg";
+import {media} from "../../../styled/Responsive.Styled";
 
 const SearchBox = ({shape}) => {
 
@@ -64,6 +65,10 @@ const Label = styled.label`
     &:hover {
       box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.3);
     }
+    
+    ${media.lessThan('sm')`
+    display: none;
+    `}
   }
 `;
 

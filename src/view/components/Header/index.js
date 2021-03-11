@@ -4,6 +4,7 @@ import SearchBox from "../searchBox";
 import {navigate} from "../../../lib/History";
 import Nav from "./Nav";
 import {LogoSvg} from "../Svg";
+import {media} from "../../../styled/Responsive.Styled";
 
 const Header = () => {
 
@@ -60,6 +61,11 @@ const Title = styled.div`
     font-size: 14px;
     font-weight: 400;
   }
+  
+  ${media.lessThan('lg')`
+  display: none;
+  `}
+  
 `;
 
 export default Header;

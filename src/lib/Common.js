@@ -91,7 +91,7 @@ export const setGroups = (data) => {
 };
 
 export const useObserver = (sentinelRef, worker) => {
-    const callback = (entries, observer) => {
+    const callback = (entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 worker()

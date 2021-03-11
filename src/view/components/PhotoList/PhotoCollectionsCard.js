@@ -78,7 +78,7 @@ const Collections = styled.div`
 `;
 
 const CollectionList = styled.div`
-  width: 416px;
+  max-width: 416px;
   height: 290px;
   border-radius: 8px;
   background: #eee;

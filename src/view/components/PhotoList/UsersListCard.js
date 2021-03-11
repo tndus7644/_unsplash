@@ -38,7 +38,7 @@ const UsersListCard = (props) => {
 }
 
 const Container = styled.div`
-  width: 416px;
+  max-width: 416px;
   max-height: 250px;
   border: 1px solid #ddd;
   border-radius: 4px;

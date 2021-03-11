@@ -5,10 +5,12 @@ import {useSelector} from "react-redux";
 import {appActions} from "../../../redux/ActionCreators";
 import {DotsMenuSvg} from "../Svg";
 import LoginPopup from "../Popup/LoginPopup/LoginPopup";
+import {media} from "../../../styled/Responsive.Styled";
+import {AiOutlineMenu} from "react-icons/ai";
 
 const Nav = () => {
 
-    const {dropdown,popup} = useSelector(state => state.app);
+    const {dropdown, popup} = useSelector(state => state.app);
 
     const handleDropdown = () => {
         appActions.updateState({
@@ -18,37 +20,42 @@ const Nav = () => {
 
     const handlePopup = () => {
         appActions.updateState({
-            popup:!popup
+            popup: !popup
         })
     }
     return (
-        <Container>
-            <Gnb>
-                <GnbItem>
-                    Brands
-                    <span role="presentation" className="Sticker">New</span>
-                </GnbItem>
-                <GnbItem>Explore</GnbItem>
-                <DropdownMenu>
-                    <MoreButton onClick={handleDropdown}>
-                        <DotsMenuSvg/>
-                    </MoreButton>
-                    <Dropdown/>
-                </DropdownMenu>
-            </Gnb>
-            <SubmitPhoto onClick={handlePopup}>
-                Submit a Photo
-            </SubmitPhoto>
-            <MemberArea>
-                <Login>
-                    Login
-                </Login>
-                <LoginPopup/>
-                <Join>
-                    Join free
-                </Join>
-            </MemberArea>
-        </Container>
+        <>
+            <Container>
+                <Gnb>
+                    <GnbItem>
+                        Brands
+                        <span role="presentation" className="Sticker">New</span>
+                    </GnbItem>
+                    <GnbItem>Explore</GnbItem>
+                    <DropdownMenu>
+                        <MoreButton onClick={handleDropdown}>
+                            <DotsMenuSvg/>
+                        </MoreButton>
+                        <Dropdown/>
+                    </DropdownMenu>
+                </Gnb>
+                <SubmitPhoto onClick={handlePopup}>
+                    Submit <span>a Photo</span>
+                </SubmitPhoto>
+                <MemberArea>
+                    <Login>
+                        Login
+                    </Login>
+                    <LoginPopup/>
+                    <Join>
+                        Join free
+                    </Join>
+                </MemberArea>
+            </Container>
+            <Menu>
+                <AiOutlineMenu/>
+            </Menu>
+        </>
     )
 }
 
@@ -58,6 +65,10 @@ const Container = styled.div`
   align-items: center;
   color: #777;
   height: 50px;
+
+  ${media.lessThan('sm')`
+  display: none;
+  `};
 `;
 
 const Gnb = styled.div`
@@ -65,6 +76,10 @@ const Gnb = styled.div`
   align-items: center;
   margin: 0 30px;
   position: relative;
+
+  ${media.lessThan('md')`
+  margin: 0 5px;
+  `};
 `;
 
 const GnbItem = styled.div`
@@ -120,6 +135,12 @@ const SubmitPhoto = styled.button`
     color: #333;
     border-color: #777;
   }
+
+  span {
+    ${media.lessThan('md')`
+  display: none;
+  `};
+  }
 `;
 
 const MemberArea = styled.div`
@@ -159,10 +180,29 @@ const Join = styled.div`
   font-weight: bold;
   transition: 0.2s;
   user-select: none;
+  white-space: nowrap;
 
   &:hover {
     background: #32ab61;
   }
+`;
+
+const Menu = styled.button`
+  display: none;
+  margin-left: 20px;
+  border: none;
+  background: none;
+  font-size: 22px;
+  color: #666;
+  padding: 3px;
+  cursor: pointer;
+  :focus{
+    outline: 0;
+  }
+  ${media.lessThan('sm')`
+  display: flex;
+  `};
+
 `;
 
 
