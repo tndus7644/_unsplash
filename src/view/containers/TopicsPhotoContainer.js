@@ -6,7 +6,7 @@ import {useSelector} from "react-redux";
 
 const TopicsPhotoContainer = ({match}) => {
 
-    const slug = match.params.slug
+    const slug = match.params?.slug
 
     useEffect(() => {
         topicPhotos();

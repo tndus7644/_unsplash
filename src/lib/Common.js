@@ -108,6 +108,6 @@ export const useObserver = (sentinelRef, worker) => {
         if (sentinelRef.current) {
             observer.observe(sentinelRef.current)
         }
-    }, [])
+    }, [sentinelRef])
 }
 
