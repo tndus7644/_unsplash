@@ -12,14 +12,10 @@ const TopicsPhotoContainer = () => {
     const slug = match?.params?.slug
 
     useEffect(() => {
-        topicPhotos();
-    },[slug])
-
-    const topicPhotos = () => {
         topicPhotoActions.topicPhoto(slug, {
             per_page:12
         })
-    }
+    },[slug])
 
     const {getTopicPhoto} = useSelector(state => state.topicPhoto);
 

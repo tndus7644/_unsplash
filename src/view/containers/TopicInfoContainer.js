@@ -13,12 +13,8 @@ const TopicInfoContainer = () => {
     const slug = match.params.slug;
 
     useEffect(() => {
-        Topics();
-    },[slug])
-
-    const Topics = () => {
         topicActions.getTopics(slug)
-    }
+    },[slug])
 
     const {topics} = useSelector(state => state.topic)
 

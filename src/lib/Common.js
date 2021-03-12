@@ -85,29 +85,25 @@ export const setGroups = (data) => {
         groups[minIndex].push(data[i]);
         groupsRatio[minIndex] = groupsRatio[minIndex] + ratio;
     }
-    
+
     return groups;
 
 };
 
 export const useObserver = (sentinelRef, worker) => {
-    const callback = (entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                worker()
-            } else {
-                console.log("outview")
-            }
-        });
-    };
-
-    const observer = new IntersectionObserver(callback)
-
-
     useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    worker()
+                }else {
+                    console.log("outview")
+                }
+            })
+        })
         if (sentinelRef.current) {
             observer.observe(sentinelRef.current)
         }
-    }, [sentinelRef])
+    }, [sentinelRef, worker])
 }
 
